@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyundai - Нова ELANTRA</title>
+    <style>
+        /* Основні стилі */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Стилі шапки */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            border-bottom: 1px solid #eee;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 25px;
+        }
+
+        .nav-buttons a {
+            margin: 0 15px;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            color: #0b588a;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Hero-секція */
+        .hero-section {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+            z-index: 2;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Загальний текстовий блок та Галерея/Вибір кольору */
+        .text-block {
+            padding: 80px 150px;
+            text-align: center;
+        }
+
+        .text-block h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .text-block p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Стилі для кнопок кольору */
+        .color-selector button {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+
+        .color-selector button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Конкретні стилі для кожного кольору */
+        .color-selector button[data-color="gray-green"] {
+            background-color: #6A706A;
+        }
+
+        .color-selector button[data-color="black"] {
+            background-color: black;
+        }
+
+        .color-selector button[data-color="white"] {
+            background-color: white;
+            border-color: #333;
+        }
+
+        .color-selector button[data-color="silver"] {
+            background-color: silver;
+        }
+
+        /* Стилі для зображення автомобіля */
+        #carImage {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Секція характеристик */
+        .specs-section {
+            padding: 60px 150px;
+            background: #f5f7fa;
+        }
+
+        .specs-title {
+            font-size: 40px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .specs-table h3 {
+            font-size: 24px;
+            margin: 40px 0 15px;
+            color: #0b588a;
+        }
+
+        .specs-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .specs-table td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-table td:first-child {
+            background: #f0f3f6;
+            width: 40%;
+            font-weight: bold;
+        }
+
+        /* Футер */
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #222;
+            color: white;
+        }
+
+        /* Дизайн-секція (додана з CSS) */
+        .design-section {
+            padding: 80px 150px;
+            text-align: center;
+        }
+
+        .design-section h2 {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .design-section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
+        }
+
+        .design-section img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Медіа-запити (Адаптивність) */
+        @media (max-width: 992px) {
+            .text-block, .specs-section, .design-section {
+                padding: 60px 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 35px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-buttons {
+                margin: 10px 0;
+            }
+        }
+        
+        /* Стилі для слайдера (якщо потрібен) */
+        .photo-slider {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 550px;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .photo-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Мокап клас із CSS */
+        .swabra {
+            width: 250px;
+            height: 100px
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://hyundai.com.ua/sites/default/files_actual/logo.svg" alt="Hyundai Logo">
+        </div>
+        <nav class="nav-buttons">
+            <a href="https://amoba228.github.io/hyndai/" target="_blank">Головна</a>
+            <a href="https://amoba228.github.io/hyndai/">Технічні характеристики</a>
+            <a href="#">Дизайн</a>
+            <a href="https://amoba228.github.io/hyndai/">Галерея</a>
+        </nav>
+        <div class="search-icon">&#9906;</div>
+        <h1>📞0 800 507 555</h1>
+    </header>
+    <main>
+        <section class="hero-section" id="golovna">
+            <img src="https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/elantra-design-kv-pc.jpg" alt="Нова ELANTRA" class="hero-image">
+            <div class="hero-content">
+                <h1>Нова ELANTRA</h1>
+            </div>
+        </section>
+
+        <section class="text-block" id="gallery">
+            <h2>🎨 Виберіть колір</h2>
+
+            <div class="color-selector">
+                <button data-color="gray-green" onclick="changeCarColor('gray-green')"></button>
+                <button data-color="black" onclick="changeCarColor('black')"></button>
+                <button data-color="white" onclick="changeCarColor('white')"></button>
+                <button data-color="silver" onclick="changeCarColor('silver')"></button>
+            </div>
+
+            <img id="carImage" src="https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png" alt="Hyundai Elantra у вибраному кольорі">
+
+        </section>
+
+        <section class="design-section">
+            <h2>🚀 Видатний Дизайн</h2>
+            <p>ELANTRA має спортивний, чотиридверний дизайн купе з динамічною архітектурою, яка не залишить вас байдужим.</p>
+            <img src="https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/elantra-design-01-pc.jpg" alt="Дизайн Hyundai Elantra">
+        </section>
+
+        <section class="specs-section">
+            <h2 class="specs-title">⚙️ Технічні характеристики</h2>
+            <div class="specs-table">
+                <h3>Двигун та Трансмісія</h3>
+                <table>
+                    <tr>
+                        <td>Тип двигуна</td>
+                        <td>Бензиновий, 1.6 MPI</td>
+                    </tr>
+                    <tr>
+                        <td>Максимальна потужність</td>
+                        <td>128 к.с.</td>
+                    </tr>
+                    <tr>
+                        <td>Трансмісія</td>
+                        <td>6-ступінчаста автоматична (6AT)</td>
+                    </tr>
+                </table>
+
+                <h3>Розміри</h3>
+                <table>
+                    <tr>
+                        <td>Довжина</td>
+                        <td>4675 мм</td>
+                    </tr>
+                    <tr>
+                        <td>Ширина</td>
+                        <td>1825 мм</td>
+                    </tr>
+                    <tr>
+                        <td>Об'єм багажника</td>
+                        <td>474 л</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2025 Hyundai. Усі права захищені.</p>
+    </footer>
+
+    <script>
+        // Об'єкт, що містить URL-адреси зображень для кожного кольору
+        const carImages = {
+            'gray-green': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94815e30.png', // Сіро-зелений
+            'black': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png', // Чорний
+            'white': 'https://learn.logikaschool.com/uploads/student/2899059/692ab93b1679c.png', // Білий
+            'silver': 'https://learn.logikaschool.com/uploads/student/2899059/692ab91f24568.png' // Сріблястий
+        };
+
+        /**
+         * Функція для зміни зображення автомобіля
+         * @param {string} colorKey - Ключ кольору (наприклад, 'black', 'white')
+         */
+        function changeCarColor(colorKey) {
+            // Отримуємо елемент зображення за його ID
+            const carImageElement = document.getElementById('carImage');
+
+            // Перевіряємо, чи існує ключ кольору в нашому об'єкті carImages
+            if (carImages[colorKey]) {
+                // Встановлюємо новий шлях до зображення
+                carImageElement.src = carImages[colorKey];
+
+                // Оновлюємо alt-текст
+                carImageElement.alt = `Hyundai Elantra у кольорі ${colorKey}`;
+            } else {
+                console.error(`Зображення для кольору "${colorKey}" не знайдено.`);
+            }
+        }
+        
+        // Встановлюємо початкове зображення за замовчуванням при завантаженні сторінки
+        document.addEventListener('DOMContentLoaded', () => {
+             // Використовуємо функцію, щоб встановити початкове зображення, що відповідає першій кнопці.
+             // Якщо ви хочете, щоб спочатку відображався 'black' (як у початковому HTML), можна залишити
+             // те, що вже є в тезі <img>, або викликати функцію:
+             // changeCarColor('gray-green'); 
+        });
+
+    </script>
+</body>
+</html>
