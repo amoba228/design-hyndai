@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Нова ELANTRA</title>
     <style>
-        /* Основні стилі */
+     
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -18,7 +18,7 @@
             text-decoration: none;
         }
 
-        /* Стилі шапки */
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -51,7 +51,7 @@
             cursor: pointer;
         }
 
-        /* Hero-секція */
+        
         .hero-section {
             position: relative;
             height: 500px;
@@ -84,7 +84,7 @@
             margin: 0;
         }
 
-        /* Загальний текстовий блок та Галерея/Вибір кольору */
+
         .text-block {
             padding: 80px 150px;
             text-align: center;
@@ -103,7 +103,7 @@
             margin: 0 auto 40px auto;
         }
 
-        /* Стилі для кнопок кольору */
+    
         .color-selector button {
             width: 30px;
             height: 30px;
@@ -118,7 +118,7 @@
             transform: scale(1.1);
         }
 
-        /* Конкретні стилі для кожного кольору */
+       
         .color-selector button[data-color="gray-green"] {
             background-color: #6A706A;
         }
@@ -136,7 +136,6 @@
             background-color: silver;
         }
 
-        /* Стилі для зображення автомобіля */
         #carImage {
             max-width: 100%;
             height: auto;
@@ -144,7 +143,7 @@
             margin: 20px auto;
         }
 
-        /* Секція характеристик */
+     
         .specs-section {
             padding: 60px 150px;
             background: #f5f7fa;
@@ -187,7 +186,7 @@
             font-weight: bold;
         }
 
-        /* Футер */
+       
         footer {
             padding: 40px;
             text-align: center;
@@ -195,7 +194,7 @@
             color: white;
         }
 
-        /* Дизайн-секція (додана з CSS) */
+        
         .design-section {
             padding: 80px 150px;
             text-align: center;
@@ -219,7 +218,7 @@
             border-radius: 10px;
         }
 
-        /* Медіа-запити (Адаптивність) */
+ 
         @media (max-width: 992px) {
             .text-block, .specs-section, .design-section {
                 padding: 60px 30px;
@@ -240,8 +239,7 @@
                 margin: 10px 0;
             }
         }
-        
-        /* Стилі для слайдера (якщо потрібен) */
+ 
         .photo-slider {
             position: relative;
             width: 100%;
@@ -258,7 +256,7 @@
             object-fit: cover;
         }
         
-        /* Мокап клас із CSS */
+    
         .swabra {
             width: 250px;
             height: 100px
@@ -286,10 +284,8 @@
                 <h1>Нова ELANTRA</h1>
             </div>
         </section>
-
         <section class="text-block" id="gallery">
             <h2>🎨 Виберіть колір</h2>
-
             <div class="color-selector">
                 <button data-color="gray-green" onclick="changeCarColor('gray-green')"></button>
                 <button data-color="black" onclick="changeCarColor('black')"></button>
@@ -298,7 +294,6 @@
             </div>
 
             <img id="carImage" src="https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png" alt="Hyundai Elantra у вибраному кольорі">
-
         </section>
     </main>
     <footer>
@@ -306,42 +301,23 @@
     </footer>
 
     <script>
-        // Об'єкт, що містить URL-адреси зображень для кожного кольору
         const carImages = {
-            'gray-green': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94815e30.png', // Сіро-зелений
-            'black': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png', // Чорний
-            'white': 'https://learn.logikaschool.com/uploads/student/2899059/692ab93b1679c.png', // Білий
-            'silver': 'https://learn.logikaschool.com/uploads/student/2899059/692ab91f24568.png' // Сріблястий
+            'gray-green': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94815e30.png', 
+            'black': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png', 
+            'white': 'https://learn.logikaschool.com/uploads/student/2899059/692ab93b1679c.png', 
+            'silver': 'https://learn.logikaschool.com/uploads/student/2899059/692ab91f24568.png'
         };
-
-        /**
-         * Функція для зміни зображення автомобіля
-         * @param {string} colorKey - Ключ кольору (наприклад, 'black', 'white')
-         */
         function changeCarColor(colorKey) {
-            // Отримуємо елемент зображення за його ID
             const carImageElement = document.getElementById('carImage');
-
-            // Перевіряємо, чи існує ключ кольору в нашому об'єкті carImages
-            if (carImages[colorKey]) {
-                // Встановлюємо новий шлях до зображення
+            if (carImages[colorKey]) {      
                 carImageElement.src = carImages[colorKey];
-
-                // Оновлюємо alt-текст
                 carImageElement.alt = `Hyundai Elantra у кольорі ${colorKey}`;
             } else {
                 console.error(`Зображення для кольору "${colorKey}" не знайдено.`);
             }
         }
-        
-        // Встановлюємо початкове зображення за замовчуванням при завантаженні сторінки
         document.addEventListener('DOMContentLoaded', () => {
-             // Використовуємо функцію, щоб встановити початкове зображення, що відповідає першій кнопці.
-             // Якщо ви хочете, щоб спочатку відображався 'black' (як у початковому HTML), можна залишити
-             // те, що вже є в тезі <img>, або викликати функцію:
-             // changeCarColor('gray-green'); 
         });
-
     </script>
 </body>
 </html>
