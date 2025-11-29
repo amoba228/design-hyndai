@@ -5,259 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyundai - Нова ELANTRA</title>
     <style>
-     
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            scroll-behavior: smooth;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    scroll-behavior: smooth;
+}
 
-        a {
-            text-decoration: none;
-        }
-
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            border-bottom: 1px solid #eee;
-            background-color: white;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .logo img {
-            height: 25px;
-        }
-
-        .nav-buttons a {
-            margin: 0 15px;
-            color: #333;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-buttons a:hover {
-            color: #0b588a;
-        }
-
-        .search-icon {
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        
-        .hero-section {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50px;
-            transform: translateY(-50%);
-            z-index: 2;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content h1 {
-            font-size: 50px;
-            font-weight: bold;
-            margin: 0;
-        }
+a {
+    text-decoration: none;
+}
 
 
-        .text-block {
-            padding: 80px 150px;
-            text-align: center;
-        }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        .text-block h2 {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 30px;
-        }
+.logo img {
+    height: 25px;
+}
 
-        .text-block p {
-            font-size: 16px;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
+.nav-buttons a {
+    margin: 0 15px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
 
-    
-        .color-selector button {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            cursor: pointer;
-            margin: 5px;
-            transition: transform 0.2s;
-        }
+.nav-buttons a:hover {
+    color: #0b588a;
+}
 
-        .color-selector button:hover {
-            transform: scale(1.1);
-        }
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
 
-       
-        .color-selector button[data-color="gray-green"] {
-            background-color: #6A706A;
-        }
+ 
+.hero-section {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
 
-        .color-selector button[data-color="black"] {
-            background-color: black;
-        }
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
-        .color-selector button[data-color="white"] {
-            background-color: white;
-            border-color: #333;
-        }
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-        .color-selector button[data-color="silver"] {
-            background-color: silver;
-        }
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
 
-        #carImage {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px auto;
-        }
 
-     
-        .specs-section {
-            padding: 60px 150px;
-            background: #f5f7fa;
-        }
+.text-block {
+    padding: 80px 150px;
+    text-align: center;
+}
 
-        .specs-title {
-            font-size: 40px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.text-block h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
 
-        .specs-table h3 {
-            font-size: 24px;
-            margin: 40px 0 15px;
-            color: #0b588a;
-        }
+.text-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
 
-        .specs-table table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 25px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+ 
+.color-selector button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* ВИПРАВЛЕННЯ: Базова рамка для кнопок кузова має бути тонкою */
+    border: 2px solid #ccc;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.2s;
+}
 
-        .specs-table td {
-            padding: 12px 18px;
-            border-bottom: 1px solid #e5e5e5;
-        }
+.color-selector button:hover {
+    transform: scale(1.1);
+}
 
-        .specs-table tr:last-child td {
-            border-bottom: none;
-        }
+/* СТИЛІ ДЛЯ КНОПОК КУЗОВА (для імітації "активного" стану) */
+.color-selector button[data-color="gray-green"] {
+    background-color: #6A706A;
+}
 
-        .specs-table td:first-child {
-            background: #f0f3f6;
-            width: 40%;
-            font-weight: bold;
-        }
+.color-selector button[data-color="black"] {
+    background-color: black;
+}
 
-       
-        footer {
+.color-selector button[data-color="white"] {
+    background-color: white;
+    border: 2px solid #333; /* Темна рамка для білої, коли не активна */
+}
+
+.color-selector button[data-color="silver"] {
+    background-color: silver;
+}
+
+#carImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+       footer {
             padding: 40px;
             text-align: center;
             background: #222;
             color: white;
         }
 
-        
-        .design-section {
-            padding: 80px 150px;
-            text-align: center;
-        }
+/* СТИЛІ ДЛЯ КНОПОК САЛОНУ */
+.interior-color-selector .color-buttons button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc; /* Базова рамка */
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.2s, border 0.3s;
+}
 
-        .design-section h2 {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
+.interior-color-selector .color-buttons button:hover {
+    transform: scale(1.1);
+}
 
-        .design-section p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            line-height: 1.7;
-        }
+/* СТИЛЬ АКТИВНОЇ КНОПКИ САЛОНУ: ПОВНЕ ВІДПОВІДАННЯ ВИМОГАМ */
+.interior-color-selector .color-buttons button.active {
+    border: 3px solid #0b588a; /* Синя рамка для кольорових кнопок */
+    transform: scale(1.1);
+}
 
-        .design-section img {
-            width: 100%;
-            border-radius: 10px;
-        }
+/* Спеціальний стиль для СВІТЛОЇ АКТИВНОЇ кнопки (наприклад, бежевої) */
+.interior-color-selector .color-buttons button[data-interior-color="beige"].active {
+    border: 3px solid #333; /* Темна рамка для світлого фону */
+}
 
  
-        @media (max-width: 992px) {
-            .text-block, .specs-section, .design-section {
-                padding: 60px 30px;
-            }
-
-            .hero-content h1 {
-                font-size: 35px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .nav-buttons {
-                margin: 10px 0;
-            }
-        }
- 
-        .photo-slider {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            height: 550px;
-            margin: 40px auto;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .photo-slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-    
-        .swabra {
+.specs-section {
+    padding: 60px 150px;
+    background: #f5f7fa;
+}
+.swabra {
             width: 250px;
             height: 100px
         }
@@ -285,7 +208,7 @@
             </div>
         </section>
         <section class="text-block" id="gallery">
-            <h2>🎨 Виберіть колір</h2>
+            <h2>🎨 Виберіть колір кузова</h2>
             <div class="color-selector">
                 <button data-color="gray-green" onclick="changeCarColor('gray-green')"></button>
                 <button data-color="black" onclick="changeCarColor('black')"></button>
@@ -294,29 +217,88 @@
             </div>
 
             <img id="carImage" src="https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png" alt="Hyundai Elantra у вибраному кольорі">
+
+            <h2 style="margin-top: 50px;">🛋️ Виберіть колір салону</h2>
+            
+            <img id="interiorImage" src="https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/interior_color_3.png" alt="Салон Hyundai Elantra у бежевому кольорі">
+
+            <div class="interior-color-selector">
+                <p>КОЛІР СИДІНЬ</p>
+                <div class="color-buttons">
+                    <button data-interior-color="dark-green" style="background-color: #4f6362;" onclick="changeInteriorColor('dark-green', this)"></button>
+                    <button data-interior-color="black" style="background-color: #383e42;" onclick="changeInteriorColor('black', this)"></button>
+                    <button data-interior-color="beige" style="background-color: #d8c2b0;" onclick="changeInteriorColor('beige', this)" class="active"></button>
+                    <button data-interior-color="dark-gray" style="background-color: #7b888a;" onclick="changeInteriorColor('dark-gray', this)"></button>
+                </div>
+                </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Hyundai. Усі права захищені.</p>
+        
+        <img class="swabra" src="https://hyundai.com.ua/sites/default/files_actual/logo.svg" alt="Hyundai Logo">
+        <h1>© 2025 | Хюндай Мотор Україна | Усі права захищені</h1>
+        
+        <p>Розміщена на цьому сайті інформація щодо наявності продукції, її характеристик, (орієнтовних) цін, інших умов її продажу, а також умов надання будь-яких послуг не є пропозицією укласти договір (офертою). Така інформація стосується наявних на складах Товариства автомобілів, щодо яких здійснене митне оформлення; вона може не бути остаточною і підлягає уточненню у відповідного дилерського центру Hyundai.</p>
     </footer>
 
     <script>
+        // =================================================
+        //                 ЗОБРАЖЕННЯ КУЗОВА                
+        // =================================================
         const carImages = {
             'gray-green': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94815e30.png', 
             'black': 'https://learn.logikaschool.com/uploads/student/2899059/692ab94253479.png', 
             'white': 'https://learn.logikaschool.com/uploads/student/2899059/692ab93b1679c.png', 
             'silver': 'https://learn.logikaschool.com/uploads/student/2899059/692ab91f24568.png'
         };
+
         function changeCarColor(colorKey) {
             const carImageElement = document.getElementById('carImage');
-            if (carImages[colorKey]) {      
+            if (carImages[colorKey]) {     
                 carImageElement.src = carImages[colorKey];
                 carImageElement.alt = `Hyundai Elantra у кольорі ${colorKey}`;
             } else {
-                console.error(`Зображення для кольору "${colorKey}" не знайдено.`);
+                console.error(`Зображення для кольору кузова "${colorKey}" не знайдено.`);
             }
         }
+        
+        // =================================================
+        //                 ЗОБРАЖЕННЯ САЛОНУ                
+        // =================================================
+        const interiorImages = {
+            'beige': 'https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/interior_color_3.png',
+            'dark-green': 'https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/interior_color_2.png',
+            'black': 'https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/interior_color_1.png',
+            'dark-gray': 'https://hyundai.com.ua/sites/all/themes/responsive/images/elantra2023/design/interior_color_4.png'
+        };
+        
+        function changeInteriorColor(colorKey, clickedButton) {
+            const interiorImageElement = document.getElementById('interiorImage');
+            const buttons = document.querySelectorAll('.interior-color-selector .color-buttons button'); 
+
+            // 1. Зміна зображення салону
+            if (interiorImages[colorKey]) {
+                interiorImageElement.src = interiorImages[colorKey];
+                interiorImageElement.alt = `Салон Hyundai Elantra у кольорі ${colorKey}`;
+            } else {
+                console.error(`Зображення для салону "${colorKey}" не знайдено.`);
+            }
+
+            // 2. Оновлення активної кнопки
+            // Видаляємо клас 'active' у всіх кнопок
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            // Додаємо клас 'active' лише до натиснутої кнопки
+            clickedButton.classList.add('active');
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            // Встановлюємо активний клас для бежевого кольору при завантаженні (для безпеки)
+            const initialButton = document.querySelector('.color-buttons button[data-interior-color="beige"]');
+            if (initialButton) {
+                 initialButton.classList.add('active'); 
+            }
         });
     </script>
 </body>
